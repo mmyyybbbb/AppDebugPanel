@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		03203A102237ED2C0022F091 /* AppDebugPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 03203A0E2237ED2C0022F091 /* AppDebugPanel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03203A1D2237EDBF0022F091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03203A1C2237EDBF0022F091 /* AppDelegate.swift */; };
-		03203A1F2237EDBF0022F091 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03203A1E2237EDBF0022F091 /* ViewController.swift */; };
-		03203A222237EDBF0022F091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03203A202237EDBF0022F091 /* Main.storyboard */; };
 		03203A242237EDC00022F091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03203A232237EDC00022F091 /* Assets.xcassets */; };
 		03203A272237EDC00022F091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03203A252237EDC00022F091 /* LaunchScreen.storyboard */; };
 		03203A2C2237EDCA0022F091 /* AppDebugPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03203A0B2237ED2C0022F091 /* AppDebugPanel.framework */; };
 		03203A2D2237EDCA0022F091 /* AppDebugPanel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03203A0B2237ED2C0022F091 /* AppDebugPanel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		035CDFBB2237F30F00596778 /* DynamicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035CDFBA2237F30F00596778 /* DynamicTableVC.swift */; };
+		035CDFBE2237F34200596778 /* TableCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035CDFBD2237F34200596778 /* TableCellType.swift */; };
+		03C49921223AA0F40085E029 /* SwitcherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C49920223AA0F40085E029 /* SwitcherCell.swift */; };
+		03C4992E223BBCE40085E029 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C4992D223BBCE40085E029 /* Main.swift */; };
+		03C49930223BD7C30085E029 /* DebugPanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C4992F223BD7C30085E029 /* DebugPanel.storyboard */; };
+		03C49936223BF9310085E029 /* DynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C49935223BF9310085E029 /* DynamicTableCell.swift */; };
+		03C49938223BF9410085E029 /* CheckboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C49937223BF9410085E029 /* CheckboxCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +52,17 @@
 		03203A0F2237ED2C0022F091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03203A1A2237EDBE0022F091 /* AppDebugPanelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDebugPanelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03203A1C2237EDBF0022F091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03203A1E2237EDBF0022F091 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		03203A212237EDBF0022F091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03203A232237EDC00022F091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03203A262237EDC00022F091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03203A282237EDC00022F091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03203A312237EEDF0022F091 /* AppDebugPanel.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AppDebugPanel.podspec; sourceTree = "<group>"; };
+		035CDFBA2237F30F00596778 /* DynamicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableVC.swift; sourceTree = "<group>"; };
+		035CDFBD2237F34200596778 /* TableCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellType.swift; sourceTree = "<group>"; };
+		03C49920223AA0F40085E029 /* SwitcherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherCell.swift; sourceTree = "<group>"; };
+		03C4992D223BBCE40085E029 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		03C4992F223BD7C30085E029 /* DebugPanel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DebugPanel.storyboard; sourceTree = "<group>"; };
+		03C49935223BF9310085E029 /* DynamicTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableCell.swift; sourceTree = "<group>"; };
+		03C49937223BF9410085E029 /* CheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +106,11 @@
 		03203A0D2237ED2C0022F091 /* AppDebugPanel */ = {
 			isa = PBXGroup;
 			children = (
+				03C4992F223BD7C30085E029 /* DebugPanel.storyboard */,
+				035CDFBC2237F32500596778 /* DynamicTable */,
 				03203A0E2237ED2C0022F091 /* AppDebugPanel.h */,
 				03203A0F2237ED2C0022F091 /* Info.plist */,
+				03C4992D223BBCE40085E029 /* Main.swift */,
 			);
 			path = AppDebugPanel;
 			sourceTree = "<group>";
@@ -106,13 +119,31 @@
 			isa = PBXGroup;
 			children = (
 				03203A1C2237EDBF0022F091 /* AppDelegate.swift */,
-				03203A1E2237EDBF0022F091 /* ViewController.swift */,
-				03203A202237EDBF0022F091 /* Main.storyboard */,
 				03203A232237EDC00022F091 /* Assets.xcassets */,
 				03203A252237EDC00022F091 /* LaunchScreen.storyboard */,
 				03203A282237EDC00022F091 /* Info.plist */,
 			);
 			path = AppDebugPanelDemo;
+			sourceTree = "<group>";
+		};
+		035CDFBC2237F32500596778 /* DynamicTable */ = {
+			isa = PBXGroup;
+			children = (
+				03C49939223C07440085E029 /* Cells */,
+				035CDFBA2237F30F00596778 /* DynamicTableVC.swift */,
+				035CDFBD2237F34200596778 /* TableCellType.swift */,
+			);
+			path = DynamicTable;
+			sourceTree = "<group>";
+		};
+		03C49939223C07440085E029 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				03C49935223BF9310085E029 /* DynamicTableCell.swift */,
+				03C49937223BF9410085E029 /* CheckboxCell.swift */,
+				03C49920223AA0F40085E029 /* SwitcherCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +209,7 @@
 				TargetAttributes = {
 					03203A0A2237ED2C0022F091 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					03203A192237EDBE0022F091 = {
 						CreatedOnToolsVersion = 10.1;
@@ -208,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C49930223BD7C30085E029 /* DebugPanel.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +250,6 @@
 			files = (
 				03203A272237EDC00022F091 /* LaunchScreen.storyboard in Resources */,
 				03203A242237EDC00022F091 /* Assets.xcassets in Resources */,
-				03203A222237EDBF0022F091 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C4992E223BBCE40085E029 /* Main.swift in Sources */,
+				035CDFBB2237F30F00596778 /* DynamicTableVC.swift in Sources */,
+				03C49938223BF9410085E029 /* CheckboxCell.swift in Sources */,
+				035CDFBE2237F34200596778 /* TableCellType.swift in Sources */,
+				03C49936223BF9310085E029 /* DynamicTableCell.swift in Sources */,
+				03C49921223AA0F40085E029 /* SwitcherCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +273,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03203A1F2237EDBF0022F091 /* ViewController.swift in Sources */,
 				03203A1D2237EDBF0022F091 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,14 +288,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		03203A202237EDBF0022F091 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03203A212237EDBF0022F091 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		03203A252237EDC00022F091 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -395,6 +424,7 @@
 		03203A142237ED2C0022F091 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -414,6 +444,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -422,6 +453,7 @@
 		03203A152237ED2C0022F091 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -449,10 +481,12 @@
 		03203A2A2237EDC00022F091 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppDebugPanelDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,10 +502,12 @@
 		03203A2B2237EDC00022F091 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppDebugPanelDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

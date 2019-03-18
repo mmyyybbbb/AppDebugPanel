@@ -9,7 +9,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.2'
   s.module_name  = 'AppDebugPanel'
-  s.source_files  = 'AppDebugPanel/**/*.swift'
-  s.resources = 'AppDebugPanel/Resources/*.xcassets'
+  s.source_files  = 'AppDebugPanel/**/*.swift' 
   s.dependency 'netfox'
 end

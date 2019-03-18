@@ -46,6 +46,9 @@ public final class DebugPanel {
     }
     
     private func build(pt: PanelTable) -> UIViewController {
+        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        let build = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+        
         let nav = UINavigationController()
         nav.isToolbarHidden = false
         nav.hidesBarsWhenKeyboardAppears = true
@@ -54,7 +57,7 @@ public final class DebugPanel {
         nav.interactivePopGestureRecognizer?.isEnabled = true
         
         let table = DynamicTableVC(items: pt.sections)
-        table.navigationItem.title = pt.name
+        table.navigationItem.title = "\(pt.name) \(version).\(build)"
         table.toolbarItems = [
             UIBarButtonItem(title: "Закрыть", style: .plain, target: self, action: #selector(hide)),
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
@@ -68,8 +71,10 @@ public final class DebugPanel {
     @objc func openNetfox() {
         NFX.sharedInstance().show()
     }
+    
+    
 }
- 
+
 extension UINavigationController: UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true

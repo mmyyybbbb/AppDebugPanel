@@ -1,1 +1,1 @@
-pod repo push gitlab-bcsbroker-ios-brokerrepo BrokerAppCore.podspec --allow-warnings  --sources='https://gitlab.com/BCSBroker/iOS/brokerrepo.git,https://github.com/CocoaPods/Specs'
+pod repo push gitlab-bcsbroker-ios-brokerrepo AppDebugPanel.podspec --allow-warnings  --sources='https://gitlab.com/BCSBroker/iOS/AppDebugPanel.git,https://github.com/CocoaPods/Specs'

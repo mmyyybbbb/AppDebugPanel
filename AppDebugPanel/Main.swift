@@ -7,15 +7,45 @@
 //
 
 import UIKit
-
-public final class DebugPanelBuilder {
- 
-    static var currentEndpoint: String = "https://my.broker.ru"
-
+import netfox
+public final class DebugPanel {
+  
+    public static let shared = DebugPanel()
+    private var mainPanelTable: PanelTable?
+    private var currentPresented: UIViewController?
     
-    public init() {}
+    private init() {
+        NFX.sharedInstance().setGesture(.custom)
+    }
     
-    public func build(pt: PanelTable) -> UIViewController {
+    public func startTrackNetwork() {
+        NFX.sharedInstance().start()
+    }
+    
+    public func set(panelTable: PanelTable) {
+        self.mainPanelTable = panelTable
+    }
+    
+    public func show() {
+        guard let panel = mainPanelTable else { return }
+        let vc = build(pt: panel)
+        presentingViewController?.present(vc, animated: true, completion: nil)
+        currentPresented = vc
+    }
+    
+    @objc public func hide() {
+        currentPresented?.dismiss(animated: true, completion: nil)
+    }
+    
+    fileprivate var presentingViewController: UIViewController? {
+        var rootViewController = UIApplication.shared.keyWindow?.rootViewController
+        while let controller = rootViewController?.presentedViewController {
+            rootViewController = controller
+        }
+        return rootViewController
+    }
+    
+    private func build(pt: PanelTable) -> UIViewController {
         let nav = UINavigationController()
         nav.isToolbarHidden = false
         nav.hidesBarsWhenKeyboardAppears = true
@@ -25,66 +55,25 @@ public final class DebugPanelBuilder {
         
         let table = DynamicTableVC(items: pt.sections)
         table.navigationItem.title = pt.name
+        table.toolbarItems = [
+            UIBarButtonItem(title: "Закрыть", style: .plain, target: self, action: #selector(hide)),
+            .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(title: "Сеть", style: .done, target: self, action: #selector(openNetfox))
+        ]
         nav.pushViewController(table, animated: false)
         return nav
     }
+    
+    
+    @objc func openNetfox() {
+        NFX.sharedInstance().show()
+    }
 }
+ 
 extension UINavigationController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
-}
-
-
-public struct PanelTable {
-    let name: String
-    private(set) var sections: [TableSection]
-    
-    public init(_ name: String, sections: [TableSection] = []) {
-        self.name = name
-        self.sections = sections
-    }
-    
-    public mutating  func add(_ section: TableSection) {
-        sections.append(section)
-    }
-    
-    public mutating  func addSection(_ name: String, _ items: TableCellType...) {
-        add(TableSection(name: name, items: items))
-    }
-}
-
-public extension PanelTable {
-    static var newsPanel: PanelTable {
-        var pt = PanelTable("Новости")
-        pt.addSection("Моки",
-                      .labled(text: "list", onTap: nil),
-                      .switcher(label: "list", onSwitch: { _ in }, valueProvider: .value(false), onTap: .handler({  })) )
-        
-        return pt
-    }
-    
-     static var rootPanel: PanelTable {
-        var pt = PanelTable("МойБрокер")
-        pt.addSection("Модули",
-                      .labled(text: "Новости", onTap: .showTable(newsPanel)),
-                      .labled(text: "Котировки", onTap: .showTable(newsPanel)))
-        
-        func checkbox(_ value: String) -> TableCellType {
-           return .checkbox(text: value,
-                            value: value,
-                            checkedProvider: { return DebugPanelBuilder.currentEndpoint == value},
-                            action: { val in DebugPanelBuilder.currentEndpoint = val})
-        }
-        
-        pt.addSection("Сервер",
-                      checkbox("https://my.broker.ru"),
-                      checkbox("https://effectivetrade.ru"),
-                      checkbox("https://my.broker.ru/test"))
-        return pt
-    }
-    
-    
 }
 
 

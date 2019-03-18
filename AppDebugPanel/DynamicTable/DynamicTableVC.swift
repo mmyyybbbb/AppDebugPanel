@@ -50,7 +50,6 @@ final class DynamicTableVC: UITableViewController {
         return sections[indexPath.section].items[indexPath.row].dequeSetup(vc: self)
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         handleSelectableActionIfNeed(indexPath: indexPath)
         handleCheckboxActionIfNeed(indexPath: indexPath) 

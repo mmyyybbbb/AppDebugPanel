@@ -18,13 +18,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let vc = DebugPanelBuilder().build(pt: .rootPanel)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = vc
+        self.window?.rootViewController = UIViewController()
         self.window?.makeKeyAndVisible()
         
-        return true 
+        DebugPanel.shared.startTrackNetwork()
+        DebugPanel.shared.set(panelTable: .rootPanel)
+        DebugPanel.shared.show()
+        return true
     }
 }
 
+extension UIViewController {
+    override open func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        DebugPanel.shared.show()
+    }
+}
+
+
+
+public extension PanelTable {
+    static var newsPanel: PanelTable {
+        var pt = PanelTable("Новости")
+        pt.addSection("Моки",
+                      .labled(text: "list", onTap: nil),
+                      .switcher(label: "list", onSwitch: { _ in }, valueProvider: .value(false), onTap: .handler({  })) )
+        
+        return pt
+    }
+    
+    static var rootPanel: PanelTable {
+        var pt = PanelTable("МойБрокер")
+        pt.addSection("Модули",
+                      .labled(text: "Новости", onTap: .showTable(newsPanel)),
+                      .labled(text: "Котировки", onTap: .showTable(newsPanel)))
+        
+        return pt
+    }
+}

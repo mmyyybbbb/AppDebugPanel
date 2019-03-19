@@ -13,7 +13,7 @@ final class SwitcherCell: DynamicTableCell {
     override class var identifier: String  { return  "SwitcherCell" }
     
     lazy var stack: UIStackView = {
-        let st = UIStackView(arrangedSubviews: [button, switcher])
+        let st = UIStackView(arrangedSubviews: [label, switcher])
         st.axis = .horizontal
         st.alignment = .center
         st.distribution = .equalCentering
@@ -22,45 +22,34 @@ final class SwitcherCell: DynamicTableCell {
     }()
     
     let switcher = UISwitch(frame: .zero)
-    let button = UIButton(type: .custom)
+    let label = UILabel(frame: .zero)
  
-    var onSwithed: Handler<Bool>!
-    var switcherValueProvider: ValueProvider<Bool>! {
+    private var onSwithed: Handler<Bool>!
+    private var switcherValueProvider: ValueProvider<Bool>! {
         didSet {
             switcher.isOn = switcherValueProvider.value
+            switched()
         }
-    }
+    } 
+    private var onTapped: Action?
     
-    var onTapped: Action? {
-        didSet{ 
-            button.isEnabled = onTapped != nil
-            button.setTitleColor(button.isEnabled ? .blue: .black, for: .normal)
-        }
+    @objc func switched() {
+        onSwithed(switcher.isOn)
+        selectableAction = switcher.isOn ? onTapped : nil
+        self.accessoryType  = switcher.isOn && onTapped != nil ? .disclosureIndicator : .none
     }
-    
-    var titleStr: String = "button" {
-        didSet{
-            button.setTitle(titleStr, for: .normal)
-        }
+ 
+    func set(title: String, onTapped: Action?, onSwitched: @escaping Handler<Bool>,  valueProvider: ValueProvider<Bool>) {
+        
+        self.label.text = title
+        self.onSwithed = onSwitched
+        self.switcherValueProvider = valueProvider
+        self.onTapped = onTapped
+        
     }
-    
-    @IBAction func switched(_ sender: UISwitch) {
-        onSwithed(sender.isOn)
-    }
-
-    @IBAction func action(_ sender: Any) {
-        handle(action: onTapped)
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        onTapped =  nil
-    }
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        button.setTitle("button", for: .normal)
         contentView.addSubview(stack)
         
         NSLayoutConstraint.activate([
@@ -68,6 +57,8 @@ final class SwitcherCell: DynamicTableCell {
             stack.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
             stack.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
             ])
+        
+        switcher.addTarget(self, action: #selector(switched), for: .valueChanged)
     }
     
     required init?(coder aDecoder: NSCoder) {

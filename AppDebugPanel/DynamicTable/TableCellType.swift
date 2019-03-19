@@ -7,6 +7,7 @@
 //
 
 public typealias Handler<T> = (T) -> Void
+public typealias CompletionHandler = () -> Void
 
 public enum Action {
     case handler( ()->() )
@@ -30,6 +31,7 @@ public enum TableCellType {
     case switcher(label: String, onSwitch: Handler<Bool>, valueProvider: ValueProvider<Bool>, onTap: Action?)
     case labled(text: String, onTap: Action?)
     case checkbox(text: String, value: String, checkedProvider: () -> Bool, action: (String) -> ())
+    case action(title: String, onAction: Handler<CompletionHandler>, statusProvider: () -> String)
 }
 
 
@@ -42,6 +44,7 @@ extension TableCellType {
         case .switcher: return SwitcherCell.identifier
         case .labled: return DynamicTableCell.identifier
         case .checkbox: return CheckboxCell.identifier
+        case .action: return ActionTableCell.identifier
         }
     }
     
@@ -62,10 +65,7 @@ extension TableCellType {
         
         switch self {
         case let .switcher(text, onSwitch, value, onTap): setup { (cell: SwitcherCell) in
-                cell.onTapped = onTap
-                cell.onSwithed = onSwitch
-                cell.switcherValueProvider = value
-                cell.titleStr = text
+                cell.set(title: text, onTapped: onTap, onSwitched: onSwitch, valueProvider: value)
             }
         case let .labled(text, onTap ): setup { (cell: DynamicTableCell) in
                 cell.textLabel?.text = text
@@ -79,6 +79,10 @@ extension TableCellType {
                 cell.onCheck = action
                 cell.refreshState()
             }
+        case let .action(title, onAction, statusProvider):
+            let cell = cell as! ActionTableCell
+            cell.set(action: onAction, actionTitle: title, stateProvider: statusProvider)
+            
         }
         
         return cell

@@ -31,8 +31,10 @@ final class DynamicTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 44 
+        tableView.rowHeight = 44
         
+        
+        tableView.register(ActionTableCell.self, forCellReuseIdentifier: ActionTableCell.identifier)
         tableView.register(CheckboxCell.self, forCellReuseIdentifier: CheckboxCell.identifier)
         tableView.register(DynamicTableCell.self, forCellReuseIdentifier: DynamicTableCell.identifier)
         tableView.register(SwitcherCell.self, forCellReuseIdentifier: SwitcherCell.identifier)

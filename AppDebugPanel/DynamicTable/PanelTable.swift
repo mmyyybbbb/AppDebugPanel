@@ -26,7 +26,7 @@ public struct PanelTable {
 }
 
 extension PanelTable {
-    public mutating func addStringCheckBoxGroup(groupName: String, action: @escaping (String) -> Void, currentValueProvider: @escaping () -> String, items: String...) {
+    public mutating func addStringCheckBoxGroup(groupName: String, action: @escaping (String) -> Void, currentValueProvider: @escaping () -> String, items: [String]) {
         
         let cells =  items.map { item -> TableCellType in
             let checkedProvider = { currentValueProvider() == item }

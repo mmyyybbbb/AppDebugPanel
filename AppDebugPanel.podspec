@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.2'
   s.module_name  = 'AppDebugPanel'
-  s.source_files  = 'AppDebugPanel/**/*.{swift, storyboard}'
+  s.source_files  = 'AppDebugPanel/**/*.{swift,storyboard}'
   s.dependency 'netfox'
 end

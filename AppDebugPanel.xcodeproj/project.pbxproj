@@ -16,13 +16,13 @@
 		035CDFBB2237F30F00596778 /* DynamicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035CDFBA2237F30F00596778 /* DynamicTableVC.swift */; };
 		035CDFBE2237F34200596778 /* TableCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035CDFBD2237F34200596778 /* TableCellType.swift */; };
 		03C49921223AA0F40085E029 /* SwitcherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C49920223AA0F40085E029 /* SwitcherCell.swift */; };
-		03C4992E223BBCE40085E029 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C4992D223BBCE40085E029 /* Main.swift */; };
+		03C4992E223BBCE40085E029 /* DebugPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C4992D223BBCE40085E029 /* DebugPanel.swift */; };
 		03C49936223BF9310085E029 /* DynamicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C49935223BF9310085E029 /* DynamicTableCell.swift */; };
 		03C49938223BF9410085E029 /* CheckboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C49937223BF9410085E029 /* CheckboxCell.swift */; };
 		03C4993B223FBD9B0085E029 /* PanelTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C4993A223FBD9B0085E029 /* PanelTable.swift */; };
 		03D9CD5D22415E6B008F5BCC /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031729612241577300875CFE /* ActionCell.swift */; };
 		03D9CD5F224235AA008F5BCC /* TextAreaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9CD5E224235AA008F5BCC /* TextAreaVC.swift */; };
-		03D9CD6122423E77008F5BCC /* TextAreaVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C4992F223BD7C30085E029 /* TextAreaVC.storyboard */; };
+		03D9CD6422426BD9008F5BCC /* TextAreaVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C4992F223BD7C30085E029 /* TextAreaVC.storyboard */; };
 		7ED58F33EBE0D9F8B2F932DF /* Pods_AppDebugPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE463F29C240446F57B9A24 /* Pods_AppDebugPanel.framework */; };
 		876FEDECB697A862A96DA4A4 /* Pods_AppDebugPanelDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6734490BA74BDB9A94E14 /* Pods_AppDebugPanelDemo.framework */; };
 /* End PBXBuildFile section */
@@ -65,7 +65,7 @@
 		035CDFBA2237F30F00596778 /* DynamicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableVC.swift; sourceTree = "<group>"; };
 		035CDFBD2237F34200596778 /* TableCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellType.swift; sourceTree = "<group>"; };
 		03C49920223AA0F40085E029 /* SwitcherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherCell.swift; sourceTree = "<group>"; };
-		03C4992D223BBCE40085E029 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		03C4992D223BBCE40085E029 /* DebugPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPanel.swift; sourceTree = "<group>"; };
 		03C4992F223BD7C30085E029 /* TextAreaVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextAreaVC.storyboard; sourceTree = "<group>"; };
 		03C49935223BF9310085E029 /* DynamicTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableCell.swift; sourceTree = "<group>"; };
 		03C49937223BF9410085E029 /* CheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCell.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 				035CDFBC2237F32500596778 /* DynamicTable */,
 				03203A0E2237ED2C0022F091 /* AppDebugPanel.h */,
 				03203A0F2237ED2C0022F091 /* Info.plist */,
-				03C4992D223BBCE40085E029 /* Main.swift */,
+				03C4992D223BBCE40085E029 /* DebugPanel.swift */,
 			);
 			path = AppDebugPanel;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03D9CD6122423E77008F5BCC /* TextAreaVC.storyboard in Resources */,
+				03D9CD6422426BD9008F5BCC /* TextAreaVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03C4992E223BBCE40085E029 /* Main.swift in Sources */,
+				03C4992E223BBCE40085E029 /* DebugPanel.swift in Sources */,
 				03D9CD5D22415E6B008F5BCC /* ActionCell.swift in Sources */,
 				03D9CD5F224235AA008F5BCC /* TextAreaVC.swift in Sources */,
 				03C4993B223FBD9B0085E029 /* PanelTable.swift in Sources */,

@@ -31,6 +31,9 @@ class DynamicTableCell: UITableViewCell  {
             let tableVC = DynamicTableVC(items: pt.sections)
             tableVC.navigationItem.title = pt.name
             push(tableVC)
+        case let .showTextArea(valueProvider, handler):
+            let vc = TextAreaVC.instantiate(text: valueProvider(), onSave: handler)
+            push(vc)
         }
     }
 }

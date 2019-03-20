@@ -21,6 +21,8 @@
 		03C49938223BF9410085E029 /* CheckboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C49937223BF9410085E029 /* CheckboxCell.swift */; };
 		03C4993B223FBD9B0085E029 /* PanelTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C4993A223FBD9B0085E029 /* PanelTable.swift */; };
 		03D9CD5D22415E6B008F5BCC /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031729612241577300875CFE /* ActionCell.swift */; };
+		03D9CD5F224235AA008F5BCC /* TextAreaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9CD5E224235AA008F5BCC /* TextAreaVC.swift */; };
+		03D9CD6122423E77008F5BCC /* TextAreaVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C4992F223BD7C30085E029 /* TextAreaVC.storyboard */; };
 		7ED58F33EBE0D9F8B2F932DF /* Pods_AppDebugPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE463F29C240446F57B9A24 /* Pods_AppDebugPanel.framework */; };
 		876FEDECB697A862A96DA4A4 /* Pods_AppDebugPanelDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6734490BA74BDB9A94E14 /* Pods_AppDebugPanelDemo.framework */; };
 /* End PBXBuildFile section */
@@ -64,10 +66,11 @@
 		035CDFBD2237F34200596778 /* TableCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellType.swift; sourceTree = "<group>"; };
 		03C49920223AA0F40085E029 /* SwitcherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherCell.swift; sourceTree = "<group>"; };
 		03C4992D223BBCE40085E029 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		03C4992F223BD7C30085E029 /* DebugPanel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DebugPanel.storyboard; sourceTree = "<group>"; };
+		03C4992F223BD7C30085E029 /* TextAreaVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextAreaVC.storyboard; sourceTree = "<group>"; };
 		03C49935223BF9310085E029 /* DynamicTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableCell.swift; sourceTree = "<group>"; };
 		03C49937223BF9410085E029 /* CheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCell.swift; sourceTree = "<group>"; };
 		03C4993A223FBD9B0085E029 /* PanelTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTable.swift; sourceTree = "<group>"; };
+		03D9CD5E224235AA008F5BCC /* TextAreaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaVC.swift; sourceTree = "<group>"; };
 		15770647CC7871D58189FD15 /* Pods-AppDebugPanel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDebugPanel.release.xcconfig"; path = "Target Support Files/Pods-AppDebugPanel/Pods-AppDebugPanel.release.xcconfig"; sourceTree = "<group>"; };
 		3FA6734490BA74BDB9A94E14 /* Pods_AppDebugPanelDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDebugPanelDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE463F29C240446F57B9A24 /* Pods_AppDebugPanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDebugPanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,7 +124,7 @@
 		03203A0D2237ED2C0022F091 /* AppDebugPanel */ = {
 			isa = PBXGroup;
 			children = (
-				03C4992F223BD7C30085E029 /* DebugPanel.storyboard */,
+				03D9CD602242366B008F5BCC /* TextArea */,
 				035CDFBC2237F32500596778 /* DynamicTable */,
 				03203A0E2237ED2C0022F091 /* AppDebugPanel.h */,
 				03203A0F2237ED2C0022F091 /* Info.plist */,
@@ -161,6 +164,15 @@
 				031729612241577300875CFE /* ActionCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		03D9CD602242366B008F5BCC /* TextArea */ = {
+			isa = PBXGroup;
+			children = (
+				03C4992F223BD7C30085E029 /* TextAreaVC.storyboard */,
+				03D9CD5E224235AA008F5BCC /* TextAreaVC.swift */,
+			);
+			path = TextArea;
 			sourceTree = "<group>";
 		};
 		E93387C46404FBB6B38739CA /* Pods */ = {
@@ -280,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D9CD6122423E77008F5BCC /* TextAreaVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +383,7 @@
 			files = (
 				03C4992E223BBCE40085E029 /* Main.swift in Sources */,
 				03D9CD5D22415E6B008F5BCC /* ActionCell.swift in Sources */,
+				03D9CD5F224235AA008F5BCC /* TextAreaVC.swift in Sources */,
 				03C4993B223FBD9B0085E029 /* PanelTable.swift in Sources */,
 				035CDFBB2237F30F00596778 /* DynamicTableVC.swift in Sources */,
 				03C49938223BF9410085E029 /* CheckboxCell.swift in Sources */,
@@ -596,8 +610,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LP7KKVCC23;
 				INFOPLIST_FILE = AppDebugPanelDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -618,8 +633,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LP7KKVCC23;
 				INFOPLIST_FILE = AppDebugPanelDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

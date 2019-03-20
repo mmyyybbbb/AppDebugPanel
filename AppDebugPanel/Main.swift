@@ -51,7 +51,7 @@ public final class DebugPanel {
         
         let nav = UINavigationController()
         nav.isToolbarHidden = false
-        nav.hidesBarsWhenKeyboardAppears = true
+        nav.hidesBarsWhenKeyboardAppears = false
         nav.hidesBottomBarWhenPushed = true
         nav.interactivePopGestureRecognizer?.delegate = nav
         nav.interactivePopGestureRecognizer?.isEnabled = true

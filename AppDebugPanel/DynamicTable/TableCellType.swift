@@ -13,6 +13,7 @@ public enum Action {
     case handler( ()->() )
     case push(() -> UIViewController)
     case showTable(PanelTable)
+    case showTextArea(valueProvider: ()->String, handler: Handler<String>)
 }
 
 public enum ValueProvider<T> {

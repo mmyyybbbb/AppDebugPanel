@@ -41,7 +41,6 @@ final class ActionTableCell: DynamicTableCell  {
         return st
     }()
 
-
     func set(action: @escaping Handler<CompletionHandler>, actionTitle: String, stateProvider:  @escaping () -> String) {
 
         self.onAction = action
@@ -51,7 +50,6 @@ final class ActionTableCell: DynamicTableCell  {
         inProgress = false
         refreshState()
     }
-    
     
     private var inProgress: Bool = false {
         didSet{
@@ -89,8 +87,6 @@ final class ActionTableCell: DynamicTableCell  {
             self.refreshState()
         }
     }
-    
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -51,9 +51,13 @@ public extension PanelTable {
     static var newsPanel: PanelTable {
         
         var pt = PanelTable("Новости")
+        let valueProvider: () -> String = { return ""}
+        let action: (String) -> Void = { _ in }
+        
         pt.addSection("Моки",
                       .labled(text: "list", onTap: nil),
-                      .switcher(label: "list", onSwitch: { _ in }, valueProvider: .value(false), onTap: .showTable(PanelTable("МОк"))) )
+                      .switcher(label: "list", onSwitch: { _ in }, valueProvider: .value(false), onTap: .showTextArea(valueProvider: valueProvider, handler: action )))
+        
         
         
         return pt
@@ -68,6 +72,8 @@ public extension PanelTable {
         pt.addSection("Гостевой вход", .action(title: "Авторизоваться",
                                                            onAction: AppDelegate.simulateAuth,
                                                            statusProvider: { AppDelegate.currentAuthState }))
+        
+        
         return pt
     }
 }

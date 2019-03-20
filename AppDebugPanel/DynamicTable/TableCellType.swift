@@ -29,7 +29,7 @@ public enum ValueProvider<T> {
 }
 
 public enum TableCellType {
-    case switcher(label: String, onSwitch: Handler<Bool>, valueProvider: ValueProvider<Bool>, onTap: Action?)
+    case switcher(label: String, subtext: String?, onSwitch: Handler<Bool>, valueProvider: ValueProvider<Bool>, onTap: Action?)
     case labled(text: String, onTap: Action?)
     case checkbox(text: String, value: String, checkedProvider: () -> Bool, action: (String) -> ())
     case action(title: String, onAction: Handler<CompletionHandler>, statusProvider: () -> String)
@@ -65,8 +65,8 @@ extension TableCellType {
         
         
         switch self {
-        case let .switcher(text, onSwitch, value, onTap): setup { (cell: SwitcherCell) in
-                cell.set(title: text, onTapped: onTap, onSwitched: onSwitch, valueProvider: value)
+        case let .switcher(text, subtext, onSwitch, value, onTap): setup { (cell: SwitcherCell) in
+                cell.set(title: text, subtitle:subtext, onTapped: onTap, onSwitched: onSwitch, valueProvider: value)
             }
         case let .labled(text, onTap ): setup { (cell: DynamicTableCell) in
                 cell.textLabel?.text = text

@@ -26,8 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = UIViewController()
         self.window?.makeKeyAndVisible()
@@ -65,6 +63,7 @@ public extension PanelTable {
     
     static var rootPanel: PanelTable {
         var pt = PanelTable("МойБрокер")
+        
         pt.addSection("Модули",
                       .labled(text: "Новости", onTap: .showTable(newsPanel)),
                       .labled(text: "Котировки", onTap: .showTable(newsPanel)))

@@ -24,17 +24,14 @@ final class ActionTableCell: DynamicTableCell  {
     
     lazy var stateLabel: UILabel = {
         let lb = UILabel()
+        lb.font = lb.font.withSize(12)
         return lb
     }()
 
     lazy var stack: UIStackView = {
-        let butStack = UIStackView(arrangedSubviews: [button, activityIndicator])
-        butStack.axis = .horizontal
-        butStack.alignment = .fill
-        butStack.translatesAutoresizingMaskIntoConstraints = false
-        
         let st = UIStackView(arrangedSubviews: [button, activityIndicator,  stateLabel])
         st.axis = .horizontal
+        st.spacing = 10
         st.alignment = .center
         st.distribution = .equalCentering
         st.translatesAutoresizingMaskIntoConstraints = false

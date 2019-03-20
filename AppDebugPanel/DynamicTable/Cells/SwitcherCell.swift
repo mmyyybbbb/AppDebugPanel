@@ -17,7 +17,6 @@ final class SwitcherCell: DynamicTableCell {
         labelsStack.axis = .vertical
         labelsStack.distribution = .fill
         labelsStack.translatesAutoresizingMaskIntoConstraints = false
-        subLabel.font = subLabel.font.withSize(12)
         
         let st = UIStackView(arrangedSubviews: [labelsStack, switcher])
         st.axis = .horizontal
@@ -61,7 +60,7 @@ final class SwitcherCell: DynamicTableCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(stack)
-        
+        subLabel.lineBreakMode = .byTruncatingHead
         NSLayoutConstraint.activate([
             stack.heightAnchor.constraint(equalTo: contentView.heightAnchor),
             stack.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),

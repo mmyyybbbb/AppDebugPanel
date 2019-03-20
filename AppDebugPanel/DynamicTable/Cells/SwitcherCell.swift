@@ -61,6 +61,7 @@ final class SwitcherCell: DynamicTableCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(stack)
         subLabel.lineBreakMode = .byTruncatingHead
+        subLabel.font = subLabel.font.withSize(12)
         NSLayoutConstraint.activate([
             stack.heightAnchor.constraint(equalTo: contentView.heightAnchor),
             stack.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),

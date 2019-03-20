@@ -54,7 +54,7 @@ public extension PanelTable {
         
         pt.addSection("Моки",
                       .labled(text: "list", onTap: nil),
-                      .switcher(label: "list", subtext: "sadafdfsf asfasd", onSwitch: { _ in }, valueProvider: .value(false), onTap: .showTextArea(valueProvider: valueProvider, handler: action )),
+                      .switcher(label: "list", subtext: "sadafdfsf asfasdasfasdasfasdasfasdasfasdasfasdasfasd", onSwitch: { _ in }, valueProvider: .value(false), onTap: .showTextArea(valueProvider: valueProvider, handler: action )),
                       .switcher(label: "Новости", subtext: nil, onSwitch: { _ in }, valueProvider: .value(false), onTap: .showTextArea(valueProvider: valueProvider, handler: action )))
         
         

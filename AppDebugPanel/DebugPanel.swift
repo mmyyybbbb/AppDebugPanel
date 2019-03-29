@@ -12,7 +12,7 @@ public final class DebugPanel {
   
     public static let shared = DebugPanel()
     private var mainPanelTable: PanelTable?
-    private var currentPresented: UIViewController?
+    public private(set) var currentPresented: UIViewController?
     
     private init() {
         NFX.sharedInstance().setGesture(.custom)
@@ -25,6 +25,12 @@ public final class DebugPanel {
     public func set(panelTable: PanelTable) {
         self.mainPanelTable = panelTable
     }
+    
+    
+    public func showModally(vc: UIViewController ) {
+        currentPresented?.present(vc, animated: true, completion: nil)
+    }
+    
     
     public func show() {
         guard let panel = mainPanelTable else { return }

@@ -24,7 +24,11 @@ final class TextAreaVC: UIViewController {
         onSave(textView.text)
         navigationController?.popViewController(animated: true)
     }
- 
+    @IBAction func saveAndClose(_ sender: Any) {
+        onSave(textView.text)
+        dismiss(animated: true, completion: nil)
+    }
+    
     static func instantiate(text: String, onSave: @escaping Handler<String>) -> TextAreaVC {
         
         let vc = UIStoryboard(name: "TextAreaVC", bundle: Bundle.init(for: TextAreaVC.self)).instantiateViewController(withIdentifier: "TextAreaVC") as! TextAreaVC

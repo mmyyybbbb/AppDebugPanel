@@ -32,6 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DebugPanel.shared.startTrackNetwork()
         DebugPanel.shared.set(panelTable: .rootPanel)
+        DebugPanel.shared.log("test 123")
+        DebugPanel.shared.log("456 test")
+        DebugPanel.shared.sendToSlack = { message in
+            print("DebugPanel.shared.sendToSlack", message)
+        }
         DebugPanel.shared.show()
         return true
     }

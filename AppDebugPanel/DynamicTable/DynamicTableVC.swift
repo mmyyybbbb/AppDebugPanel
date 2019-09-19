@@ -7,12 +7,12 @@
 //
 
 public struct TableSection {
-    let items: [TableCellType]
-    let name: String?
+    public let name: String
+    public let items: [TableCellType]
     
     public init(name: String, items: [TableCellType]) {
         self.name = name
-        self.items  = items 
+        self.items = items
     }
 }
 

@@ -5,6 +5,9 @@ Pod::Spec.new do |s|
 =======
   s.name             = 'AppDebugPanel'
   s.version          = '1.0.14'
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
   s.summary          = 'AppDebugPanel'
   s.homepage         = 'https://gitlab.com/BCSBroker/iOS/AppDebugPanel'
@@ -16,7 +19,11 @@ Pod::Spec.new do |s|
   s.module_name  = 'AppDebugPanel'
   s.source_files  = 'AppDebugPanel/**/*.{swift,storyboard}'
 <<<<<<< HEAD
+<<<<<<< HEAD
   s.dependency 'netfox', '~> 1.17.0'
+=======
+  s.dependency 'netfox', '1.16.0'
+>>>>>>> master
 =======
   s.dependency 'netfox', '1.16.0'
 >>>>>>> master

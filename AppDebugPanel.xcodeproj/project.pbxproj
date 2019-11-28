@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		03D9CD5D22415E6B008F5BCC /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031729612241577300875CFE /* ActionCell.swift */; };
 		03D9CD5F224235AA008F5BCC /* TextAreaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9CD5E224235AA008F5BCC /* TextAreaVC.swift */; };
 		03D9CD6422426BD9008F5BCC /* TextAreaVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C4992F223BD7C30085E029 /* TextAreaVC.storyboard */; };
+		2F1FC8232321127D00D31CF0 /* LogsViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1FC8222321127D00D31CF0 /* LogsViewerVC.swift */; };
 		7ED58F33EBE0D9F8B2F932DF /* Pods_AppDebugPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE463F29C240446F57B9A24 /* Pods_AppDebugPanel.framework */; };
 		876FEDECB697A862A96DA4A4 /* Pods_AppDebugPanelDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6734490BA74BDB9A94E14 /* Pods_AppDebugPanelDemo.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		03C4993A223FBD9B0085E029 /* PanelTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTable.swift; sourceTree = "<group>"; };
 		03D9CD5E224235AA008F5BCC /* TextAreaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaVC.swift; sourceTree = "<group>"; };
 		15770647CC7871D58189FD15 /* Pods-AppDebugPanel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDebugPanel.release.xcconfig"; path = "Target Support Files/Pods-AppDebugPanel/Pods-AppDebugPanel.release.xcconfig"; sourceTree = "<group>"; };
+		2F1FC8222321127D00D31CF0 /* LogsViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewerVC.swift; sourceTree = "<group>"; };
 		3FA6734490BA74BDB9A94E14 /* Pods_AppDebugPanelDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDebugPanelDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE463F29C240446F57B9A24 /* Pods_AppDebugPanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDebugPanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79961D2A049358476833FE49 /* Pods-AppDebugPanelDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDebugPanelDemo.debug.xcconfig"; path = "Target Support Files/Pods-AppDebugPanelDemo/Pods-AppDebugPanelDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		03203A0D2237ED2C0022F091 /* AppDebugPanel */ = {
 			isa = PBXGroup;
 			children = (
+				2F1FC8242321145A00D31CF0 /* LogsViewer */,
 				03D9CD602242366B008F5BCC /* TextArea */,
 				035CDFBC2237F32500596778 /* DynamicTable */,
 				03203A0E2237ED2C0022F091 /* AppDebugPanel.h */,
@@ -173,6 +176,14 @@
 				03D9CD5E224235AA008F5BCC /* TextAreaVC.swift */,
 			);
 			path = TextArea;
+			sourceTree = "<group>";
+		};
+		2F1FC8242321145A00D31CF0 /* LogsViewer */ = {
+			isa = PBXGroup;
+			children = (
+				2F1FC8222321127D00D31CF0 /* LogsViewerVC.swift */,
+			);
+			path = LogsViewer;
 			sourceTree = "<group>";
 		};
 		E93387C46404FBB6B38739CA /* Pods */ = {
@@ -384,6 +395,7 @@
 				03C49938223BF9410085E029 /* CheckboxCell.swift in Sources */,
 				035CDFBE2237F34200596778 /* TableCellType.swift in Sources */,
 				03C49936223BF9310085E029 /* DynamicTableCell.swift in Sources */,
+				2F1FC8232321127D00D31CF0 /* LogsViewerVC.swift in Sources */,
 				03C49921223AA0F40085E029 /* SwitcherCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

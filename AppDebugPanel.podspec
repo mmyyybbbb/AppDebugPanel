@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = 'AppDebugPanel'
+  s.name             = 'AppDebugPanel' 
   s.version          = '1.2.0'
   s.summary          = 'AppDebugPanel'
   s.homepage         = 'https://gitlab.com/BCSBroker/iOS/AppDebugPanel'

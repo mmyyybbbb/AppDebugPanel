@@ -67,5 +67,58 @@
             </objects>
             <point key="canvasLocation" x="2081" y="878"/>
         </scene>
+        <!--Логи-->
+        <scene sceneID="Djq-6Z-UuE">
+            <objects>
+                <viewController storyboardIdentifier="LogsViewerVC" id="BYj-r2-y7N" customClass="LogsViewerVC" customModule="AppDebugPanel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wgW-Pa-EfB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbe-IQ-7Bk">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zbe-IQ-7Bk" firstAttribute="trailing" secondItem="DQD-YS-zPx" secondAttribute="trailing" id="05e-TX-nzu"/>
+                            <constraint firstItem="zbe-IQ-7Bk" firstAttribute="top" secondItem="DQD-YS-zPx" secondAttribute="top" id="2zF-Vt-n5r"/>
+                            <constraint firstItem="zbe-IQ-7Bk" firstAttribute="bottom" secondItem="DQD-YS-zPx" secondAttribute="bottom" id="EGt-o9-YU9"/>
+                            <constraint firstItem="zbe-IQ-7Bk" firstAttribute="leading" secondItem="DQD-YS-zPx" secondAttribute="leading" id="Oso-og-CVK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DQD-YS-zPx"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Закрыть" id="Qc8-Be-1Gf">
+                            <connections>
+                                <action selector="close:" destination="BYj-r2-y7N" id="jTC-cn-hQQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="FQT-RA-rhG"/>
+                        <barButtonItem title="В Slack" id="O8P-Bo-Boj">
+                            <connections>
+                                <action selector="sendLogToSlack:" destination="BYj-r2-y7N" id="mpn-91-oxg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Очистить" id="RJy-yF-zmB">
+                            <connections>
+                                <action selector="clear:" destination="BYj-r2-y7N" id="Ddn-cI-OxU"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Логи" id="Ggx-Zc-U8f"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="zbe-IQ-7Bk" id="IWc-pS-Te8"/>
+                        <outlet property="toSlackButton" destination="O8P-Bo-Boj" id="SZt-rR-Anf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RsR-Gf-9Vl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2886" y="878"/>
+        </scene>
     </scenes>
 </document>

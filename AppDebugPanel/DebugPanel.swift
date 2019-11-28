@@ -12,7 +12,11 @@ public final class DebugPanel {
   
     public static let shared = DebugPanel()
     private var mainPanelTable: PanelTable?
-    public private(set) var currentPresented: UIViewController?
+    public private(set) var currentPresented: UINavigationController?
+    
+    public var sendToSlack: ((String) -> Void)?
+    
+    var currentLog: String = ""
     
     private init() {
         NFX.sharedInstance().setGesture(.custom)
@@ -33,7 +37,7 @@ public final class DebugPanel {
     
     
     public func show() {
-        guard let panel = mainPanelTable else { return }
+        guard let panel = mainPanelTable, currentPresented == nil else { return }
         let vc = build(pt: panel)
         presentingViewController?.present(vc, animated: true, completion: nil)
         currentPresented = vc
@@ -41,6 +45,7 @@ public final class DebugPanel {
     
     @objc public func hide() {
         currentPresented?.dismiss(animated: true, completion: nil)
+        currentPresented = nil
     }
     
     fileprivate var presentingViewController: UIViewController? {
@@ -51,7 +56,7 @@ public final class DebugPanel {
         return rootViewController
     }
     
-    private func build(pt: PanelTable) -> UIViewController {
+    private func build(pt: PanelTable) -> UINavigationController {
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
         
@@ -67,7 +72,8 @@ public final class DebugPanel {
         table.toolbarItems = [
             UIBarButtonItem(title: "Закрыть", style: .plain, target: self, action: #selector(hide)),
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(title: "Сеть", style: .done, target: self, action: #selector(openNetfox))
+            UIBarButtonItem(title: "Сеть", style: .done, target: self, action: #selector(openNetfox)),
+            UIBarButtonItem(title: "Логи", style: .done, target: self, action: #selector(openLogs))
         ]
         nav.pushViewController(table, animated: false)
         return nav
@@ -78,7 +84,19 @@ public final class DebugPanel {
         NFX.sharedInstance().show()
     }
     
+    @objc func openLogs() {
+        let vc = LogsViewerVC.instantiate(onSendToSlack: { [weak self] in
+            guard let self = self else { return }
+            self.sendToSlack?(self.currentLog)
+        })
+        currentPresented?.pushViewController(vc, animated: true)
+    }
     
+    public func log(_ log: String) {
+        print("DebugPanel.log", log)
+        
+        currentLog += "\(log) \n"
+    }
 }
 
 extension UINavigationController: UIGestureRecognizerDelegate {

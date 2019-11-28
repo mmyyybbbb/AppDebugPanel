@@ -9,7 +9,7 @@
 
 public struct PanelTable {
     public let name: String
-    private(set) var sections: [TableSection]
+    public private(set) var sections: [TableSection]
     
     public init(_ name: String, sections: [TableSection] = []) {
         self.name = name

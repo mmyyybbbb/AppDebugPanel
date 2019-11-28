@@ -3,7 +3,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 def pods
-  pod 'netfox', '~> 1.15.0'
+  pod 'netfox', '~> 1.17.0'
 end
 
 target 'AppDebugPanel' do

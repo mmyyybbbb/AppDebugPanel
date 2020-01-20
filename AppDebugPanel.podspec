@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = 'AppDebugPanel' 
-  s.version          = '1.2.0'
-  s.summary          = 'AppDebugPanel'
-  s.homepage         = 'https://gitlab.com/BCSBroker/iOS/AppDebugPanel'
+  s.version          = '1.2.1'
+  s.summary          = 'Админка для тестирования приложения'
+  s.homepage         = 'https://github.com/BCS-Broker/AppDebugPanel'
   s.author           = 'BCS'
-  s.source           = { :git => 'https://gitlab.com/BCSBroker/iOS/AppDebugPanel.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/BCS-Broker/AppDebugPanel.git', :tag => s.version.to_s }
   s.license      = { :type => 'MIT', :file => "LICENSE" }
   s.ios.deployment_target = '10.0'
   s.swift_version = '5.0'

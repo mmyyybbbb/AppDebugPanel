@@ -92,9 +92,7 @@ public final class DebugPanel {
         currentPresented?.pushViewController(vc, animated: true)
     }
     
-    public func log(_ log: String) {
-        print("DebugPanel.log", log)
-        
+    public func log(_ log: String) {  
         currentLog += "\(log) \n"
     }
 }

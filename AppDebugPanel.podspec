@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AppDebugPanel' 
-  s.version          = '1.2.1'
+  s.version          = '1.2.2'
   s.summary          = 'Админка для тестирования приложения'
   s.homepage         = 'https://github.com/BCS-Broker/AppDebugPanel'
   s.author           = 'BCS'

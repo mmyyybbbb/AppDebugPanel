@@ -37,7 +37,7 @@ public final class DebugPanel {
     
     
     public func show() {
-        guard let panel = mainPanelTable, currentPresented == nil else { return }
+        guard let panel = mainPanelTable else { return }
         let vc = build(pt: panel)
         presentingViewController?.present(vc, animated: true, completion: nil)
         currentPresented = vc

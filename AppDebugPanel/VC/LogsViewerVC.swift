@@ -42,5 +42,7 @@ final class LogsViewerVC: UIViewController {
     @IBAction func sendLogToSlack(_ sender: Any) {
         onSendToSlack()
     }
-    
 }
+
+
+ 

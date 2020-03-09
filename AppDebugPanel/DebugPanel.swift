@@ -9,12 +9,13 @@
 import UIKit
 import netfox
 public final class DebugPanel {
-  
+    
     public static let shared = DebugPanel()
     private var mainPanelTable: PanelTable?
     public private(set) var currentPresented: UINavigationController?
     
     public var sendToSlack: ((String) -> Void)?
+    public var infoProvider: () -> String = { "" }
     
     var currentLog: String = ""
     
@@ -72,6 +73,7 @@ public final class DebugPanel {
         table.toolbarItems = [
             UIBarButtonItem(title: "Закрыть", style: .plain, target: self, action: #selector(hide)),
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(title: "Инфо", style: .done, target: self, action: #selector(openInfo)),
             UIBarButtonItem(title: "Сеть", style: .done, target: self, action: #selector(openNetfox)),
             UIBarButtonItem(title: "Логи", style: .done, target: self, action: #selector(openLogs))
         ]
@@ -82,6 +84,14 @@ public final class DebugPanel {
     
     @objc func openNetfox() {
         NFX.sharedInstance().show()
+    }
+    
+    @objc func openInfo() {
+        let vc = InfoViewerVC.instantiate(onSendToSlack: { [weak self] in
+            guard let self = self else { return }
+            self.sendToSlack?(self.currentLog)
+        }, text: infoProvider())
+        currentPresented?.pushViewController(vc, animated: true)
     }
     
     @objc func openLogs() {

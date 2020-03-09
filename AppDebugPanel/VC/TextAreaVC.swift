@@ -14,6 +14,8 @@ protocol TextAreaVCDelegate: class {
 
 final class TextAreaVC: UIViewController {
 
+    @IBOutlet weak var fastForwardButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
  
     private var stringData: String!
@@ -43,7 +45,7 @@ final class TextAreaVC: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:  UIResponder.keyboardWillHideNotification, object: nil)
-        
+         
         let toolbar = KeyboardDoneToolbar(
             target: self,
             action: #selector(doneButtonAction)

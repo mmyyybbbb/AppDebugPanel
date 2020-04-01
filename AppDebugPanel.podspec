@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AppDebugPanel' 
-  s.version          = '1.2.4'
+  s.version          = '1.2.5'
   s.summary          = 'Админка для тестирования приложения'
   s.homepage         = 'https://github.com/BCS-Broker/AppDebugPanel'
   s.author           = 'BCS'
@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.module_name  = 'AppDebugPanel'
   s.source_files  = 'AppDebugPanel/**/*.{swift,storyboard}' 
-  s.dependency 'netfox', '~> 1.17.0'
+  s.dependency 'netfox', '~> 1.19.0'
 end

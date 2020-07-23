@@ -12,6 +12,7 @@ public typealias CompletionHandler = () -> Void
 public enum Action {
     case handler( ()->() )
     case push(() -> UIViewController)
+    case present(() -> UIViewController)
     case showTable(PanelTable)
     case showTextArea(valueProvider: ()->String, handler: Handler<String>)
 }

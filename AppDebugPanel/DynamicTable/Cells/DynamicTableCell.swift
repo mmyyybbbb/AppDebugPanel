@@ -26,6 +26,7 @@ class DynamicTableCell: UITableViewCell  {
         
         switch action {
         case .handler(let act): act()
+        case .present(let vc): self.vc?.present(vc(), animated: true, completion: nil)
         case .push(let vc): push(vc())
         case .showTable(let pt):
             let tableVC = DynamicTableVC(items: pt.sections)

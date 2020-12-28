@@ -27,6 +27,7 @@
 		7ED58F33EBE0D9F8B2F932DF /* Pods_AppDebugPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE463F29C240446F57B9A24 /* Pods_AppDebugPanel.framework */; };
 		876FEDECB697A862A96DA4A4 /* Pods_AppDebugPanelDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6734490BA74BDB9A94E14 /* Pods_AppDebugPanelDemo.framework */; };
 		A710DD5D2415C6B40089948A /* InfoViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710DD5C2415C6B40089948A /* InfoViewerVC.swift */; };
+		CBC0A4B5259A0FBB0051A73A /* Import+Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC0A4B4259A0FBB0051A73A /* Import+Exported.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		4BE463F29C240446F57B9A24 /* Pods_AppDebugPanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDebugPanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79961D2A049358476833FE49 /* Pods-AppDebugPanelDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDebugPanelDemo.debug.xcconfig"; path = "Target Support Files/Pods-AppDebugPanelDemo/Pods-AppDebugPanelDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A710DD5C2415C6B40089948A /* InfoViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewerVC.swift; sourceTree = "<group>"; };
+		CBC0A4B3259A0D760051A73A /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		CBC0A4B4259A0FBB0051A73A /* Import+Exported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Import+Exported.swift"; sourceTree = "<group>"; };
 		F605FEAD9602C2B9CA7300D7 /* Pods-AppDebugPanel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDebugPanel.debug.xcconfig"; path = "Target Support Files/Pods-AppDebugPanel/Pods-AppDebugPanel.debug.xcconfig"; sourceTree = "<group>"; };
 		FF65B766965B5E511AACCE05 /* Pods-AppDebugPanelDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDebugPanelDemo.release.xcconfig"; path = "Target Support Files/Pods-AppDebugPanelDemo/Pods-AppDebugPanelDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +110,7 @@
 		03203A012237ED2C0022F091 = {
 			isa = PBXGroup;
 			children = (
+				CBC0A4B3259A0D760051A73A /* Package.swift */,
 				03203A312237EEDF0022F091 /* AppDebugPanel.podspec */,
 				03203A0D2237ED2C0022F091 /* AppDebugPanel */,
 				03203A1B2237EDBF0022F091 /* AppDebugPanelDemo */,
@@ -133,6 +137,7 @@
 				03203A0E2237ED2C0022F091 /* AppDebugPanel.h */,
 				03203A0F2237ED2C0022F091 /* Info.plist */,
 				03C4992D223BBCE40085E029 /* DebugPanel.swift */,
+				CBC0A4B4259A0FBB0051A73A /* Import+Exported.swift */,
 			);
 			path = AppDebugPanel;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				03C49938223BF9410085E029 /* CheckboxCell.swift in Sources */,
 				035CDFBE2237F34200596778 /* TableCellType.swift in Sources */,
 				03C49936223BF9310085E029 /* DynamicTableCell.swift in Sources */,
+				CBC0A4B5259A0FBB0051A73A /* Import+Exported.swift in Sources */,
 				2F1FC8232321127D00D31CF0 /* LogsViewerVC.swift in Sources */,
 				03C49921223AA0F40085E029 /* SwitcherCell.swift in Sources */,
 			);
@@ -570,7 +576,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.bcs.AppDebugPanel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -601,7 +607,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.bcs.AppDebugPanel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

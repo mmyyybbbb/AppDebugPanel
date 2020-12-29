@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import netfox
+import NetFox
+
 public final class DebugPanel {
     
     public static let shared = DebugPanel()
